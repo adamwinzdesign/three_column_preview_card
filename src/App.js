@@ -10,7 +10,7 @@ function App() {
 			<Main>
 				<CardContainer>
 					{card_data.map((card) => (
-						<Card card={card} />
+						<Card key={card.title} card={card} />
 					))}
 				</CardContainer>
 			</Main>
