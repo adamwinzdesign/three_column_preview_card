@@ -1,19 +1,13 @@
 import styled from "styled-components";
 import { very_light_gray } from "../colors";
 
-const Card = ({ card }) => {
+const Card = (props) => {
 	return (
-		// <CardBody style={{ backgroundColor: card.color }}>
-		// 	<Icon src={card.icon} alt='card_icon' />
-		// 	<H1>{card.title}</H1>
-		// 	<P>{card.text}</P>
-		// 	<Button>Learn More</Button>
-		// </CardBody>
-		<CardBody>
-			<Icon src={card.icon} alt='card_icon' />
-			<H1>{card.title}</H1>
-			<P>{card.text}</P>
-			<Button>Learn More</Button>
+		<CardBody {...props}>
+			<Icon src={props.card.icon} alt='card_icon' />
+			<H1>{props.card.title}</H1>
+			<P>{props.card.text}</P>
+			<Button color={props.card.color}>Learn More</Button>
 		</CardBody>
 	);
 };
@@ -21,13 +15,13 @@ const Card = ({ card }) => {
 export default Card;
 
 const CardBody = styled.div`
-	background: ${(props) => props.color}
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
 	height: 100%;
 	padding: 50px;
+	background: ${(props) => props.card.color};
 `;
 
 const Icon = styled.img`
@@ -51,29 +45,6 @@ const P = styled.p`
 	margin-bottom: 2.5rem;
 `;
 
-// const Button = styled.button`
-// 	height: 50px;
-// 	width: 145px;
-// 	border-radius: 25px;
-// 	border: none;
-// 	outline: none;
-// 	background-color: ${very_light_gray};
-// 	font-weight: 700;
-// 	font-size: 16px;
-// 	&:hover {
-// 		background-color: transparent;
-// 		border: 2px solid ${very_light_gray};
-// 	}
-// `;
-
-// const Input = styled.input.attrs(props => ({
-//   // we can define static props
-//   type: "text",
-
-//   // or we can define dynamic ones
-//   size: props.size || "1em",
-// }))`
-
 const Button = styled.button`
 	height: 50px;
 	width: 145px;
@@ -87,5 +58,6 @@ const Button = styled.button`
 	&:hover {
 		background-color: transparent;
 		border: 2px solid ${very_light_gray};
+		color: ${very_light_gray};
 	}
 `;
