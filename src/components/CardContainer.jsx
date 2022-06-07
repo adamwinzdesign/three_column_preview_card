@@ -10,6 +10,11 @@ const CardContainer = styled.div`
 	justify-content: center;
 	color: ${transparent_white};
 	overflow: hidden;
+	@media (max-width: 375px) {
+		height: auto;
+		width: 320px;
+		flex-direction: column;
+	}
 `;
 
 export default CardContainer;
