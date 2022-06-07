@@ -1,17 +1,6 @@
 import styled from "styled-components";
 import { very_light_gray } from "../colors";
 
-// const Card = (props) => {
-// 	return (
-// 		<CardBody {...props}>
-// 			<Icon src={props.card.icon} alt='card_icon' />
-// 			<H1>{props.card.title}</H1>
-// 			<P>{props.card.text}</P>
-// 			<Button color={props.card.color}>Learn More</Button>
-// 		</CardBody>
-// 	);
-// };
-
 const Card = ({ card }) => {
 	const { icon, title, text, color } = card;
 
