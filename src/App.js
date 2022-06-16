@@ -7,10 +7,10 @@ import { card_data } from "./card_data";
 function App() {
 	return (
 		<div className='App'>
-			<Main>
+			<Main role='main'>
 				<CardContainer>
 					{card_data.map((card) => (
-						<Card key={card.title} card={card} />
+						<Card role='contentinfo' key={card.title} card={card} />
 					))}
 				</CardContainer>
 			</Main>
